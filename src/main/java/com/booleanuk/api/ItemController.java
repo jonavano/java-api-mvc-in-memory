@@ -16,8 +16,8 @@ public class ItemController {
     }
 
     @GetMapping
-    public ArrayList<Item> getAll() {
-        return this.itemRepository.getAll();
+    public List<Item> getAll(@RequestParam(required = false) String category) {
+        return this.itemRepository.getAll(category);
     }
 
     @GetMapping("/{id}")
